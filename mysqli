@@ -1,0 +1,4 @@
+通过设置offset偏移结合limit查询
+limit 1 offset 1
+使用with rollup来统计group by的数据
+group by id with rollup 
